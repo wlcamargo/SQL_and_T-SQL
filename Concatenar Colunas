@@ -1,0 +1,6 @@
+--Script para concaternar colunas
+
+SELECT
+NOME +' '+ SOBRENOME AS NOME_COMPLETO
+
+FROM TB_CLIENTE
