@@ -1,0 +1,5 @@
+-- Script para atualizar o preço de vendas do produto mouse
+
+UPDATE TB_VENDAS 
+SET PRECO = 50
+WHERE PRODUTO = 'MOUSE'
