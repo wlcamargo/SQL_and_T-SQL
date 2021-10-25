@@ -1,0 +1,3 @@
+-- Script para trazer os últimos 3 meses a partir do dia atual
+
+DATEADD(MONTH,-3,GETDATE())
