@@ -1,0 +1,12 @@
+-- O script abaixo cria um Procedure para retornar a maior data da tabela de vendas, ou seja, a última data.
+
+CREATE PROCEDURE ULT_DATA_VENDA AS (
+
+SELECT
+MAX(DATA)
+FROM VENDAS
+)
+
+-- Para executar o Procedure, basta utilizar a função "Exec" e o nome do Procedure, conforme exemplo abaixo:
+
+EXEC ULT_DATA_VENDA
