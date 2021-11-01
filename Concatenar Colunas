@@ -1,6 +1,14 @@
---Script para concaternar colunas
+--Script para concaternar colunas (No exemplo abaixo, vai concatenar Strings e se forem duas colunas colunas irá somar)
 
 SELECT
 NOME +' '+ SOBRENOME AS NOME_COMPLETO
+
+FROM TB_CLIENTE
+
+
+--Script para concaternar duas colunas ainda que numéricas
+
+SELECT
+Concat(Coluna_num_1, Coluna_num_2) as Coluna1_e_Coluna2
 
 FROM TB_CLIENTE
