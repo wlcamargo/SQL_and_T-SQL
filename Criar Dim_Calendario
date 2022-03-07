@@ -21,7 +21,7 @@ CREATE TABLE  dCalendario(
   END
 );
 
---POVOAR  Dim_Calendario
+--POVOAR  Dim_Calendario, de acordo com as datas da tabela fato
 WITH DATAS (datamin,datamax) AS (
 
 	SELECT MIN(datamin), MAX(datamax) FROM (
