@@ -1,0 +1,9 @@
+--NOME DA TABELA E NOME DA FK
+
+ALTER TABLE [dbo].[fVendas] DROP CONSTRAINT [fk_Cliente]
+
+ALTER TABLE [dbo].[fVendas] DROP CONSTRAINT [fk_Produto]
+
+ALTER TABLE [dbo].[fVendas] DROP CONSTRAINT [fk_Loja]
+
+ALTER TABLE [dbo].[fVendas] DROP CONSTRAINT [fk_Calendario]
