@@ -1,0 +1,9 @@
+--Script irá adicionar chave estrangeira na tabela fato
+
+ALTER TABLE fVendas ADD CONSTRAINT fk_Cliente FOREIGN KEY (id_cliente) REFERENCES dClientes (id_Cliente);
+
+ALTER TABLE fVendas ADD CONSTRAINT fk_Produto FOREIGN KEY (id_Produto) REFERENCES dProdutos (id_Produto);
+
+ALTER TABLE fVendas ADD CONSTRAINT fk_Loja FOREIGN KEY (id_Loja) REFERENCES dLojas (id_Loja);
+
+ALTER TABLE fVendas ADD CONSTRAINT fk_Calendario FOREIGN KEY (DATA_VENDA) REFERENCES dCalendario (DATA_VENDA);
