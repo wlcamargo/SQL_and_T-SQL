@@ -1,0 +1,3 @@
+--Criar Índice em uma tabela
+
+CREATE INDEX NOME_DO_INDICE ON NOME_DA_TABELA (COLUNA);
