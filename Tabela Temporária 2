@@ -1,0 +1,14 @@
+-- Apaga a tabela temporária caso exista
+if object_id('tempdb..#fVendas_2') is not null drop table #fVendas_2;
+
+--Insere dados de uma tabela existente em uma tabela temporária
+select 
+	*
+into
+	#fVendas_2
+from
+	fvendas;
+
+
+
+select * from #fVendas_2
