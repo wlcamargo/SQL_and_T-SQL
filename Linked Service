@@ -1,0 +1,3 @@
+--Realizar consulta entre dois servidores diferentes
+
+[Nome_Servidor].Banco_de_Dados.dbo.Tabela
