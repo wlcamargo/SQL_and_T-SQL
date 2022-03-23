@@ -1,0 +1,1 @@
+CONVERT(nvarchar(7), Data, 23) AS Mes_Ano
