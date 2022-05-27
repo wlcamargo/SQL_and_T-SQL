@@ -1,3 +1,7 @@
+Create Procedure SP_TRUNCATE_ALL_TABLES
+AS
+BEGIN 
+
 Declare @Tabelas Table (Idx Int Identity(1,1), TblName Varchar(100))             
 
 Insert into @Tabelas (TblName)             
@@ -14,6 +18,9 @@ Begin
   Select @Command = 'Truncate Table ' + TblName + '' From @Tabelas Where Idx = @Start              
   Exec(@Command)             
  
-END
 
  Set @Start = @Start + 1             
+End
+
+END
+
