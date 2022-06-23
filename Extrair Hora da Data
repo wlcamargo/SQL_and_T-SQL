@@ -1,0 +1,1 @@
+CONVERT(varchar(8),[DATA],24) AS HORA
