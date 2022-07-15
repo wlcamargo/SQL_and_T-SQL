@@ -1,0 +1,46 @@
+ALTER function [dbo].[DiasUteis](@date datetime, @dias int) returns @diasuteis table(dia date)
+as
+begin
+
+    declare @feriados table(dia date);
+    declare @ano int;
+    declare @inc int;
+    declare @cnt int;
+    
+    set @ano = YEAR(@date);
+    set @inc = 1;
+    set @cnt = 0;
+
+    if (@dias < 0) 
+    begin
+	   set @inc = -1;
+	   set @dias = - @dias;
+    end;
+
+    set @date = DATEADD(day, @inc, @date);
+
+    insert into @feriados(dia) select dia from dbo.FeriadosAno(@ano);
+
+    while @cnt < @dias
+    begin
+
+	   if (((DATEPART(dw, @date) + @@DATEFIRST - 1) % 7) + 1) not in (1, 7) 
+			 and not exists (select * from @feriados where dia = @date)
+	   begin
+		  insert into @diasuteis(dia) values (@date);
+		  set @cnt = @cnt + 1;
+	   end;
+
+	   set @date = DATEADD(day, @inc, @date);
+	   
+	   if(YEAR(@date) <> @ano)
+	   begin
+		  set @ano = year(@date);
+		  delete from @feriados;
+		  insert into @feriados(dia) select dia from dbo.FeriadosAno(@ano);
+	   end;
+	   
+    end;
+
+    return;    
+end;
