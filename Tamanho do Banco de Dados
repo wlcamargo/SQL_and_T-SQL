@@ -1,0 +1,13 @@
+USE NOME_DO_BANCO_DE_DADOS;
+
+Go
+
+DECLARE @Indice Int
+
+SELECT @Indice = SUM(reserved) FROM master..SYSINDEXES WHERE indid IN (0, 1, 255)
+
+SELECT CAST(name AS VARCHAR(30)) AS name, 'total mb' =
+
+((size*8)/1024)
+
+FROM sysfiles
